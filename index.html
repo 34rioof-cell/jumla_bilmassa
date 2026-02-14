@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uditha Vithanage</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./pixelcut-export.png"/>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      async
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script async src="script.js"></script>
+  </head>
+  <body> <script>// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAZMS7Nj1C7ROPmyPCTbisMIeBHLLqVe_E",
+  authDomain: "ryoof-55d96.firebaseapp.com",
+  projectId: "ryoof-55d96",
+  storageBucket: "ryoof-55d96.firebasestorage.app",
+  messagingSenderId: "593763682854",
+  appId: "1:593763682854:web:5445e5920c1571482574e7"
+};
+
+// Initialize Firebase
+
+
+
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+
+ document.getElementById("ContactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    try {
+      await addDoc(collection(db, "CONTACT ME"), {
+        CLIENT_NAME:document.getElementById ('name').value,
+        CLIENT_PHONE:document.getElementById ('phone').value,
+        CLIENT_EMAIL:document.getElementById ('email').value,
+        CLIENT_SUBJECT :document.getElementById ('title').value,
+        CLIENT_message:document.getElementById ('submit').value,
+        createdAt: new Date()
+      });
+
+      alert("تم حفظ البيانات بنجاح ✅");
+      document.getElementById("myForm").reset();
+    } catch (error) {
+      console.error("خطأ:", error);
+    }
+  })
+    </script>
+
+
+
+    <heaader class="header">
+      <a href="#home" class="logo">Mr.<span>RYOOF</span></a>
+
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#education">Education</a>
+        <!-- <a href="#services">Services</a> -->
+        <a href="#websites">Websites</a>
+        <a href="#testimonials">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </heaader>
+
+    <section class="home" id="home">
+      <div class="home-content">
+
+        <h1>Hi, I'm <span>RYOOF RAAD </span></h1>
+        <h3 class="text-animation">I'm a <span></span></h3>
+<p>
+I'm a Web Developer and Computer Programming trainee, passionate about building clean, modern, and user-friendly websites and web applications.
+I enjoy working with front-end and back-end technologies, and I’m always excited to learn new tools and improve my development skills.
+My goal is to create practical and high-quality digital solutions that make a real impact.
+</p>
+
+       
+        <div class="social-icons">
+
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ryoofsaqheer@gmail.com&su=Contact+from+Portfolio" target="_blank">
+   <i class="bx bxs-envelope"></i>
+</a>
+         <a href="https://api.whatsapp.com/send/?phone=966566699647&text&type=phone_number&app_absent=0" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+          <!-- <a href="mailto:ryoofsaqheer@gmail.com"><i class="bx bxs-envelope"></i></a> -->
+            <a href="https://www.linkedin.com/in/ryoof-saqheer-03428b3ab" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                     <a href="tel:+966500000000"><i class="bx bxs-phone"></i></a>
+
+        </div>
+
+        <div class="btn-group">
+          <!-- <a href="mailto:ryoofsaqheer@gmail.com" target="_blank" class="btn">Hire Me</a> -->
+          <a href="#contact" class="btn">Contact</a>
+        </div>
+      </div>
+
+      <div class="home-img">
+        <img src="IMG.RR.jpeg" alt="richard hanrick" width="350" />
+      </div>
+    </section>
+
+    <section class="education" id="education">
+      <h2 class="heading">Education</h2>
+      <div class="timeline-items">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023- 2026</div>
+          <div class="timeline-content">
+            <h3>TVTC</h3>
+          <p>
+  Programming & Web Development<br/>
+  Diploma Program<br/>
+  Focused on Web Development, Oracle Database and Software Engineering
+          </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2026</div>
+          <div class="timeline-content">
+            <h3>Al Noor Specialist Hospital</h3>
+        <p>
+    Practical Training<br/>
+    SQL & Oracle Database<br/>
+    UI/UX Design & Portfolio Development<br/>
+    Technical Support
+</p>
+          </div>
+        </div>
+    </section>
+
+    
+
+      
+    <section class="websites" id="websites">
+      <div class="websites-box">
+        <h2 class="heading"><span>MY</span> projects</h2>
+        <div class="websites-wrapper" id="websitesList">
+          <script>
+            // Array of website details
+            const websites = [
+              // { name: "SENTENCE WITH A TOUCH", img: "./petlife.png", url: "https://www.pet-lifes.com/" },
+              { name: "SENTENCE WITH A TOUCH", img: "./jm.jpg", url: "https://www.pet-lifes.com/" },
+              { name: "Video Flight site OUR NAS", img: "./UOR.jpg", url: "https://videodownloaderv2-9gvseiqgr-udithavithanages-projects.vercel.app/" },
+           // { name: "MY  ONLI STRORE", img: "./VCUCal.png", url: "https://calculators-peach.vercel.app/" },
+              { name: "LEGAL ASSISTANT", img: "MI.IMG.jpg", url: "https://www.figma.com/proto/ZdKbEJk24e90r5lbz2CTkr/%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B9%D8%AF-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A?node-id=0-1&t=1E8WRf27syEr4kX1-1" }
+            ];
+          
+            // Generate and insert website items dynamically
+            document.getElementById("websitesList").innerHTML = websites
+              .map(website => `
+                <div class="website-item">
+                  <a href="${website.url}" target="_blank">
+                    <img src="${website.img}" alt="${website.name}" />
+                    <h2>${website.name}</h2>
+                  </a>
+                </div>
+              `)
+              .join("");
+          </script>    
+        </div>
+      </div>
+    </section>
+
+    
+    
+
+    <section class="testimonials" id="testimonials">
+      <div class="testimonials-box">
+        <h2 class="heading">Skills</h2>
+    
+        <div class="websites-wrapper" id="skillsList">
+          <script>
+            // Array of skills with image paths
+            const skills = [
+              { name: "HTML", img: "./html.png" },
+              { name: "CSS", img: "./css.png" },
+              { name: "JavaScript", img: "./js.png" },
+        
+            ];
+          
+            // Generate and insert skill items using map()
+            document.getElementById("skillsList").innerHTML = skills
+              .map(skill => `
+                <div class="website-item">
+                  <img src="${skill.img}" alt="${skill.name}" />
+                  <h2>${skill.name}</h2>
+                </div>
+              `)
+              .join("");
+          </script>
+        </div>
+      </div>
+    </section>
+    
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+
+      <form id="ContactForm">
+        <div class="input-group">
+          <div class="input-box">
+            <input id="name" type="text" placeholder="Full Name" />
+            <input id="email" type="email" placeholder="Enter Your Email" />
+          </div>
+          <div class="input-box">
+            <input id="phone" type="tel" placeholder="Phone Number" />
+            <input id="title" type="text" placeholder="Subject" />
+          </div>
+        </div>
+
+        <div class="input-group-2">
+          <textarea
+            name=""
+            id="msg"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+          ></textarea>
+          <!-- <input type="submit" value="Send Message" id="submit" class="btn" /> -->
+       <button id="submit" onclick="saveDate()">ارسال </button>
+        </div>
+      </form>
+    </section
+
+    <footer class="footer">
+      <div class="social">
+        <!-- <a href="https://api.whatsapp.com/send/?phone=966566699647&text&type=phone_number&app_absent=0" target="_blank"><i class="bx bxl-whatsapp"></i></a> -->
+          <!-- <a href="https://www.facebook.com/staphane.uditha" target="_blank"><i class="bx bxl-facebook"></i></a> -->
+          <!-- <a href="https://www.instagram.com/uditha_vithanage" target="_blank"><i class="bx bxl-instagram-alt"></i></a> -->
+          <!-- <a href="https://www.tiktok.com/@uditha_vithanage" target="_blank"><i class="bx bxl-tiktok"></i></a> -->
+      </div>
+
+      <ul class="list">
+        <!-- <
+          <a href="#">FAQ</a> /li> -->
+        <!-- < <a href="#">Services</a> /li> -->
+        <li>
+          <a href="#">About Me</a>
+        <!-- </li> <a href="#">Contact</a> <li> -->
+         
+        <!-- <li> <a href="#">Skills</a> </li> -->
+ <!-- <li> <a href="#">MY projects</a> </li> -->
+
+
+
+      </ul>
+      <p class="copyright">© <script>document.write(new Date().getFullYear());</script> RYOOF RAAD | All Right Reserved</p>
+  </body>
+</html>
